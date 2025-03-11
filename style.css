@@ -3,21 +3,22 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Full-screen layout */
 body, html {
     width: 100%;
     height: 100%;
-    background: #121212;
+    background: #0a0a0a;
     color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.3s ease;
 }
 
-/* Container styling */
+/* Container */
 .container {
     width: 100%;
     height: 100%;
@@ -26,11 +27,11 @@ body, html {
     flex-direction: column;
 }
 
-/* Navigation bar */
+/* Navigation Bar */
 nav {
-    background: #222;
+    background: #1a1a1a;
     padding: 15px;
-    border-bottom: 2px solid #ff9800;
+    border-bottom: 3px solid #8a2be2;
 }
 
 nav ul {
@@ -43,24 +44,29 @@ nav ul li {
     padding: 15px 25px;
     cursor: pointer;
     font-size: 18px;
-    transition: 0.3s ease;
+    color: #ccc;
+    transition: 0.3s ease-in-out;
 }
 
-nav ul li.active, nav ul li:hover {
-    background: #ff9800;
+nav ul li:hover, nav ul li.active {
+    background: #8a2be2;
     border-radius: 5px;
+    color: white;
+    transform: scale(1.1);
 }
 
-/* Content container */
+/* Content */
 .content {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Tab content */
+/* Tab Content */
 .tab-content {
     max-width: 600px;
     text-align: center;
@@ -70,11 +76,15 @@ nav ul li.active, nav ul li:hover {
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* Active tab content */
+/* Active tab */
 .tab-content.active {
     display: block;
-    opacity: 1;
-    transform: translateY(0);
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+/* Fade-out effect */
+.tab-content.fade-out {
+    animation: fadeOut 0.5s ease-in-out forwards;
 }
 
 /* List styles */
@@ -86,21 +96,40 @@ ul {
 ul li {
     padding: 5px;
     font-size: 18px;
+    transition: 0.3s;
 }
 
-/* Download button */
+ul li:hover {
+    color: #8a2be2;
+    transform: scale(1.1);
+}
+
+/* Download Button */
 .download-btn {
     display: inline-block;
     margin-top: 20px;
     padding: 12px 24px;
-    background: #ff9800;
+    background: #8a2be2;
     color: #fff;
     text-decoration: none;
     font-size: 18px;
     border-radius: 5px;
-    transition: 0.3s ease;
+    transition: 0.3s ease-in-out;
 }
 
 .download-btn:hover {
-    background: #e68900;
+    background: #6a1bbf;
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px rgba(138, 43, 226, 0.6);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(20px); }
 }
