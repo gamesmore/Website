@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Tabbed Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li class="tab active" onclick="openTab(event, 'home')">Home</li>
+                <li class="tab" onclick="openTab(event, 'about')">About</li>
+                <li class="tab" onclick="openTab(event, 'features')">Features</li>
+                <li class="tab" onclick="openTab(event, 'download')">Download</li>
+            </ul>
+        </nav>
+        
+        <div class="content">
+            <div id="home" class="tab-content active">
+                <h1>Welcome to Our Website</h1>
+                <p>We offer high-quality digital products and tools to enhance your experience.</p>
+                <p>Explore our features and get started today!</p>
+            </div>
+
+            <div id="about" class="tab-content">
+                <h1>About Us</h1>
+                <p>We are a team of developers committed to providing the best software solutions.</p>
+                <p>Our mission is to create user-friendly, powerful applications that make life easier.</p>
+            </div>
+
+            <div id="features" class="tab-content">
+                <h1>Our Features</h1>
+                <ul>
+                    <li>✅ Fast and lightweight</li>
+                    <li>✅ User-friendly interface</li>
+                    <li>✅ Secure and reliable</li>
+                    <li>✅ Regular updates and support</li>
+                </ul>
+            </div>
+
+            <div id="download" class="tab-content">
+                <h1>Download Section</h1>
+                <p>Click below to download the latest version of our software.</p>
+                <a href="your-file.zip" class="download-btn" download>Download Now</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
